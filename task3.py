@@ -1,24 +1,7 @@
-"""
-Лабораторна робота №1. Завдання 3. Варіант 2.
-Обчислення суми n елементів ряду:
-
-S = cos(x-n-1)/sin(x) - sin(x-n-2)/cos(x^3) + cos(x-n-3)/sin(x^5) - ...
-
-Три функції: for, while, рекурсія.
-Кожна повертає (success: bool, result: float).
-n ∈ N, x ∈ R.
-"""
-
 import math
 
 
 def term(k, x, n):
-    """
-    Обчислює k-й член ряду (k від 1).
-    Знак: (-1)^(k+1)
-    Чисельник: cos(x-n-k) якщо k непарне, sin(x-n-k) якщо k парне
-    Знаменник: sin(x^(2k-1)) якщо k непарне, cos(x^(2k-1)) якщо k парне
-    """
     sign = (-1) ** (k + 1)
 
     arg_num = x - n - k
@@ -44,7 +27,6 @@ def term(k, x, n):
 
 
 def sum_for(n, x):
-    """Обчислення суми за допомогою циклу for."""
     try:
         s = 0.0
         for k in range(1, n + 1):
@@ -54,8 +36,7 @@ def sum_for(n, x):
         return False, str(e)
 
 
-def sum_while(n, x):
-    """Обчислення суми за допомогою циклу while."""
+def sum_while(n, x)
     try:
         s = 0.0
         k = 1
@@ -68,7 +49,6 @@ def sum_while(n, x):
 
 
 def sum_recursive(n, x, k=1, acc=0.0):
-    """Обчислення суми за допомогою рекурсії."""
     try:
         if k > n:
             return True, acc
